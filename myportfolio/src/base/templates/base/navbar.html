@@ -1,0 +1,34 @@
+{% load static %}
+<div class="nav-wrapper">
+
+		<!-- Link around dots-wrapper added after tutorial video -->
+	<a href="{% url 'home' %}">
+	<div class="dots-wrapper">
+		<div id="dot-1" class="browser-dot"></div>
+		<div id="dot-2" class="browser-dot"></div>
+		<div id="dot-3" class="browser-dot"></div>
+	</div>
+	</a>
+						
+
+	<ul id="navigation">
+	<li><a href="{% url 'home' %}#contact">Contact</a></li>
+	{% if request.user.is_authenticated %}
+	    
+		<li><a href ="{% url 'create_post' %}#contact">CreatePost</a></li>
+
+		
+		<li><a href="{% url 'logout' %}">Logout</a></li>
+							    
+	{% else %}
+		<li><a href="{% url 'posts' %}">projects</a></li>
+	    <li><a href="{% static 'resume.pdf' %}">resume</a></li>
+		<li><a href="{% url 'login' %}">Login</a></li>
+	{% endif %}
+
+	</ul>
+	
+
+						
+</div>
+

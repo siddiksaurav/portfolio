@@ -1,0 +1,26 @@
+{% extends 'base/main.html' %}
+
+{% block content %}
+<style type="text/css">
+	
+	img{
+		max-width: 50%;
+		object-fit: cover;
+	}
+</style>
+
+<div class="main-container">
+	    <img src="{{post.thumbnail.url}}">
+		<h6>{{post.headline}}</h6>
+		<p class="post-intro"> Github:<a href="{{post.sub_headline}}">Codes</a></p>
+
+		<p>{{post.body|linebreaks}}</p>
+		
+         <br>
+
+         <a id="back-btn" href= "{% url 'home' %}"> Back to Home Page</a>
+
+
+<div>
+
+{% endblock content %}
